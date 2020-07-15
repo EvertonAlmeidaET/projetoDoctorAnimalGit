@@ -30,13 +30,19 @@ public class IniProjeto extends HttpServlet {
 		String cpfCliente = request.getParameter("cpfCliente");
 		
 		CadastroCliente cliente = new CadastroCliente();
-		cliente.setNome(nomeCliente);
+		cliente.setNomeCliente(nomeCliente);
 		cliente.setIdade(Integer.valueOf(idadeCliente));
 		cliente.setSexo(sexoCliente.toUpperCase().charAt(0));
 		cliente.setCpf(cpfCliente);
 		
 		BancoDeDados cadastroBanco = new BancoDeDados();
 		cadastroBanco.adiciona(cliente);
+		
+		cliente.getAnimal().setNomeAnimal("nomeAnimal");
+		cliente.getAnimal().setIdadeAnimal("");
+		cliente.getAnimal().setSexoAnimal(nomeAnimal);
+		cliente.getAnimal().setRaca(nomeAnimal);
+		cliente.getAnimal().setDescricao((nomeAnimal);
 		
 	
 		RequestDispatcher rd = request.getRequestDispatcher("/sucessoCadastroCliente.jsp");

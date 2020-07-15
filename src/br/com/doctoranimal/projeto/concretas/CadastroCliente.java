@@ -6,9 +6,10 @@ public class CadastroCliente {
 	private Integer idade;
 	private Character sexo;
 	private String cpf;
+	private CadastroPet animal = new CadastroPet();
 	
 
-	public void setNome(String nomeCliente) {
+	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 		
 	}
@@ -44,6 +45,14 @@ public class CadastroCliente {
 	@Override
 	public String toString() {
 		return String.format("[Nome: %s - Sexo: %s - Idade: %d - CPF: %s]", this.nomeCliente, this.sexo, this.idade, this.cpf);
+	}
+
+	public CadastroPet getAnimal() {
+		return animal;
+	}
+
+	public void setAnimal(CadastroPet animal) {
+		this.animal = animal;
 	}
 	
 }

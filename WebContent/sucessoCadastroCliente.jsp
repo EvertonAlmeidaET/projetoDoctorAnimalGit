@@ -12,6 +12,7 @@
 	<body>
 		<span>Cliente ${ cadastroCliente } Cadastrado com sucesso!</span>
 		<br/>
-		<span>Cliente<c:out value="${cadastroCliente.nomeCliente}"/> Cadastrado com sucesso!</span>
+		<span>Cliente <c:out value="${cadastroCliente.nomeCliente}"/> Cadastrado com sucesso!</span>
+		<p><a href="formCadastro.jsp">Cadastrar novo Cliente</a></p>
 	</body>
 </html>
