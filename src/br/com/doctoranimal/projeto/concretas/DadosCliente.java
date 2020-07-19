@@ -1,6 +1,6 @@
 package br.com.doctoranimal.projeto.concretas;
 
-public class CadastroCliente {
+public class DadosCliente {
 	
 	private String nomeCliente;
 	private Integer idade;

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ page import="br.com.doctoranimal.projeto.servlet.IniProjeto" %>
+ <%@ page import="br.com.doctoranimal.projeto.servlet.CadastroCliente" %>
  
 <!DOCTYPE html>
 <html>

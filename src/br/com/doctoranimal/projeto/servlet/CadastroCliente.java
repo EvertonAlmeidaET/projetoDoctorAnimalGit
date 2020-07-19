@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.doctoranimal.projeto.concretas.BancoDeDados;
-import br.com.doctoranimal.projeto.concretas.CadastroCliente;
+import br.com.doctoranimal.projeto.concretas.DadosCliente;
 
 /**
  * Servlet implementation class IniProjeto
  */
 //http:/localhost:8080/doctoranimal/iniProjeto
 @WebServlet("/iniProjeto")
-public class IniProjeto extends HttpServlet {
+public class CadastroCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -29,7 +29,7 @@ public class IniProjeto extends HttpServlet {
 		String sexoCliente = request.getParameter("sexoCliente");
 		String cpfCliente = request.getParameter("cpfCliente");
 		
-		CadastroCliente cliente = new CadastroCliente();
+		DadosCliente cliente = new DadosCliente();
 		cliente.setNomeCliente(nomeCliente);
 		cliente.setIdade(Integer.valueOf(idadeCliente));
 		cliente.setSexo(sexoCliente.toUpperCase().charAt(0));
@@ -38,18 +38,11 @@ public class IniProjeto extends HttpServlet {
 		BancoDeDados cadastroBanco = new BancoDeDados();
 		cadastroBanco.adiciona(cliente);
 		
-		cliente.getAnimal().setNomeAnimal("nomeAnimal");
-		cliente.getAnimal().setIdadeAnimal("");
-		cliente.getAnimal().setSexoAnimal(nomeAnimal);
-		cliente.getAnimal().setRaca(nomeAnimal);
-		cliente.getAnimal().setDescricao((nomeAnimal);
-		
-	
 		RequestDispatcher rd = request.getRequestDispatcher("/sucessoCadastroCliente.jsp");
 		request.setAttribute("cadastroCliente", cliente);
 		rd.forward(request, response);
 		
-		for (CadastroCliente clienteLista : cadastroBanco.getClienteCadastrado()) {
+		for (DadosCliente clienteLista : cadastroBanco.getClienteCadastrado()) {
 			System.out.println(clienteLista);
 		}
 		

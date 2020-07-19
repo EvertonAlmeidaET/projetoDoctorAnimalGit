@@ -5,13 +5,13 @@ import java.util.List;
 
 public class BancoDeDados {
 	
-	private static List<CadastroCliente> listaCadastroCliente = new ArrayList<>();
+	private static List<DadosCliente> listaCadastroCliente = new ArrayList<>();
 	
-	public void adiciona(CadastroCliente cliente) {
+	public void adiciona(DadosCliente cliente) {
 		BancoDeDados.listaCadastroCliente.add(cliente);
 	}
 	
-	public List<CadastroCliente> getClienteCadastrado() {
+	public List<DadosCliente> getClienteCadastrado() {
 		return BancoDeDados.listaCadastroCliente;
 	}
 	

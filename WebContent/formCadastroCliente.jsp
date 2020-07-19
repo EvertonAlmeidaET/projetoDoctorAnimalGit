@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ page import="br.com.doctoranimal.projeto.servlet.IniProjeto" %>
+ <%@ page import="br.com.doctoranimal.projeto.servlet.CadastroCliente" %>
  
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<h1>Cadastro</h1>
-		<form action="/doctoranimal/iniProjeto" method="post" id="cadastroCliente">
+		<form action="/doctoranimal/CadastroCliente" method="post" id="cadastroCliente">
 			<span>Nome Cliente:</span> <input type="text" name="nomeCliente" />
 			<br/>
 			<span>Idade:</span> <input type="text" name="idadeCliente" />
