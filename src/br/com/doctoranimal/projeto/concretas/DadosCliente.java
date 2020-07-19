@@ -50,9 +50,5 @@ public class DadosCliente {
 	public CadastroPet getAnimal() {
 		return animal;
 	}
-
-	public void setAnimal(CadastroPet animal) {
-		this.animal = animal;
-	}
 	
 }

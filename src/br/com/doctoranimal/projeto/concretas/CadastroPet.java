@@ -8,7 +8,7 @@ public class CadastroPet {
 	
 	private Character sexoAnimal;
 	
-	private String raca;
+	private String especie;
 	
 	private String descricao;
 
@@ -36,12 +36,12 @@ public class CadastroPet {
 		this.sexoAnimal = sexoAnimal;
 	}
 
-	public String getRaca() {
-		return this.raca;
+	public String getEspecie() {
+		return this.especie;
 	}
 
-	public void setRaca(String raca) {
-		this.raca = raca;
+	public void setEspecie(String especie) {
+		this.especie = especie;
 	}
 
 	public String getDescricao() {
@@ -50,6 +50,12 @@ public class CadastroPet {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("[Nome: %s, Idade: %d, Sexo: %s, Tipo: %s, Descrição: %s]", this.nomeAnimal, this.idadeAnimal, 
+				this.sexoAnimal, this.especie, this.descricao);
 	}
 
 }

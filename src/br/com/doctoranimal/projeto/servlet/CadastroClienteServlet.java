@@ -16,8 +16,8 @@ import br.com.doctoranimal.projeto.concretas.DadosCliente;
  * Servlet implementation class IniProjeto
  */
 //http:/localhost:8080/doctoranimal/iniProjeto
-@WebServlet("/iniProjeto")
-public class CadastroCliente extends HttpServlet {
+@WebServlet("/cadastroCliente")
+public class CadastroClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -38,9 +38,13 @@ public class CadastroCliente extends HttpServlet {
 		BancoDeDados cadastroBanco = new BancoDeDados();
 		cadastroBanco.adiciona(cliente);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/sucessoCadastroCliente.jsp");
 		request.setAttribute("cadastroCliente", cliente);
-		rd.forward(request, response);
+		
+		response.sendRedirect("formPet.jsp");
+		
+//		RequestDispatcher rd = request.getRequestDispatcher("/sucessoCadastroCliente.jsp");
+//		request.setAttribute("cadastroCliente", cliente);
+//		rd.forward(request, response);
 		
 		for (DadosCliente clienteLista : cadastroBanco.getClienteCadastrado()) {
 			System.out.println(clienteLista);
