@@ -15,7 +15,7 @@ import br.com.doctoranimal.projeto.concretas.DadosCliente;
 /**
  * Servlet implementation class IniProjeto
  */
-//http:/localhost:8080/doctoranimal/iniProjeto
+//http:/localhost:8080/doctoranimal/cadastroCliente
 @WebServlet("/cadastroCliente")
 public class CadastroClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
