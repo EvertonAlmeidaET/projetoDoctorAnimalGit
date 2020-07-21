@@ -17,9 +17,6 @@ import br.com.doctoranimal.projeto.concretas.DadosCliente;
 public class CadastroPetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	
-
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando Pet");
 		
@@ -27,7 +24,9 @@ public class CadastroPetServlet extends HttpServlet {
 		String idadeAnimal = request.getParameter("idadeAnimal");
 		String sexoAnimal = request.getParameter("sexoAnimal");
 		String especie = request.getParameter("especie");
-		String descricao = String.format(new Locale("pt", "BR"), "%s", request.getParameter("descricao"));
+		String descricao = request.getParameter("descricao");
+//		byte[] descricao2 = descricao.getBytes("UTF-8");
+//		descricao = new String(descricao2, "UTF-8");
 		
 		DadosCliente cliente = new DadosCliente();
 		cliente.getAnimal().setNomeAnimal(nomeAnimal);

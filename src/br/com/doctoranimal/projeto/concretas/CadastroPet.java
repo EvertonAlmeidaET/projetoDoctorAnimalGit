@@ -2,15 +2,23 @@ package br.com.doctoranimal.projeto.concretas;
 
 public class CadastroPet {
 	
+	private static final long serialVersionUID = 1;
+	
+	private static Integer idPet = Integer.valueOf(1);
 	private String nomeAnimal;
-	
 	private Integer idadeAnimal;
-	
 	private Character sexoAnimal;
-	
 	private String especie;
-	
 	private String descricao;
+	
+	
+	public CadastroPet() {
+		CadastroPet.idPet++;
+	}
+	
+	public static Integer getIdPet() {
+		return CadastroPet.idPet;
+	}
 
 	public String getNomeAnimal() {
 		return this.nomeAnimal;

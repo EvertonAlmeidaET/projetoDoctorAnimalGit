@@ -2,13 +2,24 @@ package br.com.doctoranimal.projeto.concretas;
 
 public class DadosCliente {
 	
+	private static final long serialVersionUID = 1;
+	
+	private static Integer idCliente = Integer.valueOf(1);
 	private String nomeCliente;
 	private Integer idade;
 	private Character sexo;
 	private String cpf;
 	private CadastroPet animal = new CadastroPet();
 	
-
+	public DadosCliente() {
+		DadosCliente.idCliente++;
+	}
+	
+	
+	public static Integer getIdCliente() {
+		return DadosCliente.idCliente;
+	}
+	
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 		

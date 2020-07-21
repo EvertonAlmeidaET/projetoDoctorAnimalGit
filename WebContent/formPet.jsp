@@ -11,6 +11,7 @@
 		<meta charset="UTF-8">
 		<title>Cadastro PET</title>
 		<link rel="stylesheet" type="text/css" href="_style/form.css">
+		<script language="javascript" src="_javascript/scriptform.js"></script>
 	</head>
 	<body>
 		
@@ -27,13 +28,13 @@
 					<!-- NOME ANIMAL -->
 					<p>
 						<label for="cNomeAnimal">Nome Animal:</label>
-						<input type="text" name="nomeAnimal" id="cNomeAnimal" size="20" maxlength="30" placeholder="Nome do Animal"/>
+						<input type="text" name="nomeAnimal" id="cNomeAnimal" size="20" maxlength="30" placeholder="Nome do Animal" onkeypress="return formatarApenasLetras()"/>
 					</p>
 					
 					<!-- IDADE ANIMAL -->
 					<p>
 						<label for="cIdadeAnimal">Idade do Animal:</label>
-						<input type="text" name="idadeAnimal" id="cIdadeAnimal" size="2" maxlength="2" placeholder="Idade"/>
+						<input type="text" name="idadeAnimal" id="cIdadeAnimal" size="2" maxlength="2" placeholder="Idade" onkeypress="return formatarApenasNumero()"/>
 					</p>
 					
 					<!-- SEXO CLIENTE --> 
@@ -44,10 +45,10 @@
                          <input type="radio" name="sexoAnimal" id="cFem" value="F"> <label for="cFem">Feminino</label>
                     </fieldset>
                     
-                    <!-- IDADE ANIMAL -->
+                    <!-- ESPECIE ANIMAL -->
 					<p>
 						<label for="cEspecie">Especie:</label>
-						<input type="text" name="especie" id="cEspecie" placeholder="Especie"/>
+						<input type="text" name="especie" id="cEspecie" placeholder="Especie" onkeypress="return formatarApenasLetras()"/>
 					</p>
 					
 				  	<!-- DESCRIÇÃO -->

@@ -8,6 +8,7 @@
 		<meta charset="UTF-8">
 		<title>Cadastro Cliente</title>
 		<link rel="stylesheet" type="text/css" href="_style/form.css">
+		<script language="javascript" src="_javascript/scriptform.js"></script>
 	</head>
 	<body>
 		<h1>Cadastro</h1>
@@ -17,13 +18,13 @@
 					<!-- NOME CLIENTE -->
 					<p>
 						<label for="cNomeCliete">Nome Cliente:</label>
-						<input type="text" name="nomeCliente" id="cNomeCliente" size="20" maxlength="30" placeholder="Nome Completo"/>
+						<input type="text" name="nomeCliente" id="cNomeCliente" size="20" maxlength="30" placeholder="Nome Completo" onkeypress="return formatarApenasLetras()"/>
 					</p>
 					
 					<!-- IDADE CLIENTE --> 
 					<p>
 						<label for="cIdadeCliente">Idade:</label>
-						<input type="text" name="idadeCliente" id="cIdadeCliente" size="2" maxlength="2" placeholder="Idade"/>
+						<input type="text" name="idadeCliente" id="cIdadeCliente" size="2" maxlength="2" placeholder="Idade" onkeypress="return formatarApenasNumero()"/>
 					</p> 
 					
 					<!-- SEXO CLIENTE --> 
@@ -37,13 +38,12 @@
 					<!-- CPF CLIENTE --> 
 					<p>
 						<label for="cCpfCliente">CPF Cliente:</label>
-						<input type="text" name="cpfCliente" id="cCpfCliente" size="11" maxlength="12" placeholder="CPF"/>
+						<input type="text" name="cpfCliente" id="cCpfCliente" size="11" maxlength="12" placeholder="CPF" onkeypress="return formatarApenasNumero()"/>
 					</p>
 					
 					<!-- BOTÃO ENVIAR FORMULADO --> 
 					<input id="enviarformuladoCliente" type="submit">
 			</fieldset>
-		</form>
-		
+		</form>		
 	</body>
 </html>
