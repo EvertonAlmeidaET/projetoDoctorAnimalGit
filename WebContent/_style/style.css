@@ -1,4 +1,4 @@
-@charset="utf-8";
+@charset="UTF-8";
 
 /* ESTILO DO CORPO DO BEM-VINDO*/
 body{
@@ -16,20 +16,6 @@ div.divisaoPaginaBemVindo{
 	margin-bottom: 350px;
 }
 
-a {
-	color: #606060;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-p#cadastroCliente{
-	text-align: center;
-	font-size: 20px;
-}
-
 /* CONFIGURAÇÃO DA MARGEM DO TITULO H1 */
 header#cabecalho h1{
 	text-align: center;
@@ -41,13 +27,27 @@ header#cabecalho h1{
 	margin-bottom: 0px;
 	top: 10px;
 	left: 550px;
-	
 }
+
 
 header#cabecalho h2{
 	text-align: center;
 	top: 80px;
 	left: 550px;
+}
+
+p#formCadastro, p#listaDeCadastrado{
+	text-align: center;
+	font-size: 20px;
+}
+
+a {
+	color: #606060;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 div.divisaoPaginaRodape{

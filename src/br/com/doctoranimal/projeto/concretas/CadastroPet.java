@@ -2,13 +2,13 @@ package br.com.doctoranimal.projeto.concretas;
 
 public class CadastroPet {
 	
-	private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 1L;
 	
 	private static Integer idPet = Integer.valueOf(1);
 	private String nomeAnimal;
 	private Integer idadeAnimal;
 	private Character sexoAnimal;
-	private String especie;
+	private String raca;
 	private String descricao;
 	
 	
@@ -44,12 +44,12 @@ public class CadastroPet {
 		this.sexoAnimal = sexoAnimal;
 	}
 
-	public String getEspecie() {
-		return this.especie;
+	public String getRaca() {
+		return this.raca;
 	}
 
-	public void setEspecie(String especie) {
-		this.especie = especie;
+	public void setRaca(String raca) {
+		this.raca = raca;
 	}
 
 	public String getDescricao() {
@@ -62,8 +62,8 @@ public class CadastroPet {
 	
 	@Override
 	public String toString() {
-		return String.format("[Nome: %s, Idade: %d, Sexo: %s, Tipo: %s, Descrição: %s]", this.nomeAnimal, this.idadeAnimal, 
-				this.sexoAnimal, this.especie, this.descricao);
+		return String.format("[Nome: %s - Idade: %d - Sexo: %s - Raca: %s - Descrição: %s]", this.nomeAnimal, this.idadeAnimal, 
+				this.sexoAnimal, this.raca, this.descricao);
 	}
 
 }

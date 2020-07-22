@@ -2,7 +2,6 @@ package br.com.doctoranimal.projeto.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,12 +27,14 @@ public class CadastroClienteServlet extends HttpServlet {
 		String idadeCliente = request.getParameter("idadeCliente");
 		String sexoCliente = request.getParameter("sexoCliente");
 		String cpfCliente = request.getParameter("cpfCliente");
+		String email = request.getParameter("emailCliente");
 		
 		DadosCliente cliente = new DadosCliente();
 		cliente.setNomeCliente(nomeCliente);
 		cliente.setIdade(Integer.valueOf(idadeCliente));
 		cliente.setSexo(sexoCliente.toUpperCase().charAt(0));
 		cliente.setCpf(cpfCliente);
+		cliente.setEmail(email);
 		
 		BancoDeDados cadastroBanco = new BancoDeDados();
 		cadastroBanco.adiciona(cliente);

@@ -45,10 +45,32 @@
                          <input type="radio" name="sexoAnimal" id="cFem" value="F"> <label for="cFem">Feminino</label>
                     </fieldset>
                     
-                    <!-- ESPECIE ANIMAL -->
+                    <!-- ESPECIE/RAÇA ANIMAL -->
 					<p>
-						<label for="cEspecie">Especie:</label>
-						<input type="text" name="especie" id="cEspecie" placeholder="Especie" onkeypress="return formatarApenasLetras()"/>
+						<label for="cRaca">Raça:</label>
+						<select name="racaAnimal" id="cRaca">
+							<option value="null">Selecione...</option>
+							<optgroup label="Cachorro">
+								<option value="Poodle">Poodle</option>
+								<option value="Shih-tzu">Shih tzu</option>
+								<option value="Pastor-alemao">Pastor alemão</option>
+								<option value="Pinscher">Pinscher</option>
+								<option value="Pit-bull">Pit bull</option>
+								<option value="Vira-Lata">Vira-Lata</option>
+							</optgroup>
+							<optgroup label="Gato">
+								<option value="Peterbald">Peterbald</option>
+								<option value="angora-turco">angorá turco</option>
+								<option value="Maine-coon">Maine coon</option>
+								<option value="Sphynx">Sphynx</option>
+							</optgroup>
+							<optgroup label="Rato">
+								<option value="Camundongo">Camundongo</option>
+								<option value="Porquinho-da-India">Porquinho da-India </option>
+								<option value="Ratazana">Ratazana</option>
+								<option value="Chinchila">Chinchila </option>
+							</optgroup>
+						</select>
 					</p>
 					
 				  	<!-- DESCRIÇÃO -->

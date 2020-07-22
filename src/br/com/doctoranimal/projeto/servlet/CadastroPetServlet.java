@@ -1,7 +1,6 @@
 package br.com.doctoranimal.projeto.servlet;
 
 import java.io.IOException;
-import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +22,7 @@ public class CadastroPetServlet extends HttpServlet {
 		String nomeAnimal = request.getParameter("nomeAnimal");
 		String idadeAnimal = request.getParameter("idadeAnimal");
 		String sexoAnimal = request.getParameter("sexoAnimal");
-		String especie = request.getParameter("especie");
+		String racaAnimal = request.getParameter("racaAnimal");
 		String descricao = request.getParameter("descricao");
 //		byte[] descricao2 = descricao.getBytes("UTF-8");
 //		descricao = new String(descricao2, "UTF-8");
@@ -32,11 +31,15 @@ public class CadastroPetServlet extends HttpServlet {
 		cliente.getAnimal().setNomeAnimal(nomeAnimal);
 		cliente.getAnimal().setIdadeAnimal(Integer.valueOf(idadeAnimal));
 		cliente.getAnimal().setSexoAnimal(sexoAnimal.toUpperCase().charAt(0));
-		cliente.getAnimal().setEspecie(especie);
+		cliente.getAnimal().setRaca(racaAnimal);
 		cliente.getAnimal().setDescricao(descricao);
 		
 		BancoDeDados cadastroBanco = new BancoDeDados();
 		cadastroBanco.adiciona(cliente);
+		
+		request.setAttribute("cadastroCliente", cliente);
+		
+		response.sendRedirect("listarCadastrosSalvos.jsp");
 		
 		for (DadosCliente clienteLista : cadastroBanco.getClienteCadastrado()) {
 			System.out.println(clienteLista.getAnimal());

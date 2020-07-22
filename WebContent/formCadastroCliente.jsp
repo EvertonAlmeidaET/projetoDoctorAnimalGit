@@ -41,6 +41,12 @@
 						<input type="text" name="cpfCliente" id="cCpfCliente" size="11" maxlength="12" placeholder="CPF" onkeypress="return formatarApenasNumero()"/>
 					</p>
 					
+					<!-- EMAIL CLIENTE --> 
+					<p>
+						<label for="cEmail">E-mail:</label>
+						<input type="email" name="emailCliente" id="cEmail" size="20" maxlength="40" placeholder="Digite seu E-mail"/>
+					</p>
+					
 					<!-- BOTÃO ENVIAR FORMULADO --> 
 					<input id="enviarformuladoCliente" type="submit">
 			</fieldset>

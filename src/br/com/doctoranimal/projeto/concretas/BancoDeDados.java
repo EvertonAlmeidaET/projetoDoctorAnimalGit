@@ -13,9 +13,10 @@ public class BancoDeDados {
 		cliente1.setIdade(32);
 		cliente1.setCpf("555.000.222-10");
 		cliente1.setSexo('F');
+		cliente1.setEmail("caroline32@teste.com.br");
 		cliente1.getAnimal().setNomeAnimal("Charlies");
 		cliente1.getAnimal().setIdadeAnimal(8);
-		cliente1.getAnimal().setEspecie("Cachorro");
+		cliente1.getAnimal().setRaca("Poodle");
 		cliente1.getAnimal().setSexoAnimal('M');
 		cliente1.getAnimal().setDescricao("Charlies é um cachorro muito feliz");
 		
@@ -24,9 +25,10 @@ public class BancoDeDados {
 		cliente2.setIdade(24);
 		cliente2.setCpf("535.666.302-10");
 		cliente2.setSexo('M');
+		cliente2.setEmail("everton25@teste.com.br");
 		cliente2.getAnimal().setNomeAnimal("Billy");
 		cliente2.getAnimal().setIdadeAnimal(8);
-		cliente2.getAnimal().setEspecie("Cachorro");
+		cliente2.getAnimal().setRaca("Shih tzu");
 		cliente2.getAnimal().setSexoAnimal('M');
 		cliente2.getAnimal().setDescricao("Billy é um cachorro muito feliz");
 		

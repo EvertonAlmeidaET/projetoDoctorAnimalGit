@@ -9,8 +9,9 @@ public class DadosCliente {
 	private Integer idade;
 	private Character sexo;
 	private String cpf;
+	private String email;
 	private CadastroPet animal = new CadastroPet();
-	
+
 	public DadosCliente() {
 		DadosCliente.idCliente++;
 	}
@@ -53,13 +54,23 @@ public class DadosCliente {
 		return this.cpf;
 	}
 	
-	@Override
-	public String toString() {
-		return String.format("[Nome: %s - Sexo: %s - Idade: %d - CPF: %s]", this.nomeCliente, this.sexo, this.idade, this.cpf);
-	}
-
 	public CadastroPet getAnimal() {
 		return animal;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getEmail() {
+		return this.email;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("[Nome: %s - Sexo: %s - Idade: %d - CPF: %s - Email: %s]", this.nomeCliente, this.sexo, this.idade, 
+				this.cpf, this.email);
 	}
 	
 }
