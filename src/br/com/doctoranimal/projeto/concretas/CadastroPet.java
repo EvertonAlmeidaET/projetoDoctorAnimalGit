@@ -4,7 +4,7 @@ public class CadastroPet {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private static Integer idPet = Integer.valueOf(1);
+	private Integer idPet = Integer.valueOf(0);
 	private String nomeAnimal;
 	private Integer idadeAnimal;
 	private Character sexoAnimal;
@@ -13,11 +13,15 @@ public class CadastroPet {
 	
 	
 	public CadastroPet() {
-		CadastroPet.idPet++;
+//		CadastroPet.idPet++;
 	}
 	
-	public static Integer getIdPet() {
-		return CadastroPet.idPet;
+	public void setIdPet(Integer idPet) {
+		this.idPet = idPet;
+	}
+	
+	public Integer getIdPet() {
+		return this.idPet;
 	}
 
 	public String getNomeAnimal() {

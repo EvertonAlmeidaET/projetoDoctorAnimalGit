@@ -20,6 +20,10 @@ h1{
 	
 }
 
+hr.linhaDivisoria{
+	border-top: 20px solid;
+}
+
 /* DESABILITAR A ALTERAÇÃO DO TAMANHO DO TEXTAREA DO FORMPET */
 textarea#cDescricao{
 	resize: none;

@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@ page import="java.util.List, br.com.doctoranimal.projeto.servlet.CadastroPetServlet, 
-	br.com.doctoranimal.projeto.servlet.CadastroClienteServlet" %>
+<%@ page import="java.util.List, br.com.doctoranimal.projeto.servlet.CadastroClientePetServlet" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -17,9 +16,11 @@
 		
 		<ul>
 			<c:forEach items="${dadosCadastrados}"  var="cadastro">
-				<li>${cadastro}</li>
-				<li>${cadastro.animal}</li>
-				
+				<li>
+					${cadastro.nomeCliente} - ${cadastro.animal.nomeAnimal} 
+					<a href="/doctoranimal/removeClientePet?id=${cadastro.idCliente}&id2=${cadastro.animal.idPet}">remove</a>
+					<a href="/doctoranimal/editarClientePet?id=${cadastro.idCliente}&id2=${cadastro.animal.idPet}">editar</a>
+				</li>
 			</c:forEach>
 		
 		</ul>	

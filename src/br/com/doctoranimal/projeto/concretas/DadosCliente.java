@@ -4,7 +4,7 @@ public class DadosCliente {
 	
 	private static final long serialVersionUID = 1;
 	
-	private static Integer idCliente = Integer.valueOf(1);
+	private Integer idCliente = Integer.valueOf(0);
 	private String nomeCliente;
 	private Integer idade;
 	private Character sexo;
@@ -13,12 +13,15 @@ public class DadosCliente {
 	private CadastroPet animal = new CadastroPet();
 
 	public DadosCliente() {
-		DadosCliente.idCliente++;
+//		DadosCliente.idCliente++;
 	}
 	
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
+	}
 	
-	public static Integer getIdCliente() {
-		return DadosCliente.idCliente;
+	public Integer getIdCliente() {
+		return this.idCliente;
 	}
 	
 	public void setNomeCliente(String nomeCliente) {
