@@ -21,7 +21,7 @@ public class CadastroClientePetServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Cadastrando Cliente");
+		System.out.println("Cadastrando Cliente....");
 		
 		String nomeCliente = request.getParameter("nomeCliente");
 		String idadeCliente = request.getParameter("idadeCliente");
@@ -48,17 +48,10 @@ public class CadastroClientePetServlet extends HttpServlet {
 		
 		BancoDeDados cadastroBanco = new BancoDeDados();
 		cadastroBanco.adiciona(cliente);
-			
+					
 		request.setAttribute("cadastroCliente", cliente);
 		
 		response.sendRedirect("listaDadosCadastrados");
-		
-		for (DadosCliente clienteLista : cadastroBanco.getClienteCadastrado()) {
-			System.out.printf("[ID: %d - Cliente Nome: %s - CPF: %s] [IDPet: %d - NomePet: %s - Raça: %s - Descrição: %s] \n\r"
-					,clienteLista.getIdCliente(), clienteLista.getNomeCliente(), clienteLista.getCpf(), 
-					clienteLista.getAnimal().getIdPet(), clienteLista.getAnimal().getNomeAnimal(), 
-					clienteLista.getAnimal().getRaca(), clienteLista.getAnimal().getDescricao());
-		}
 		
 //		RequestDispatcher rd = request.getRequestDispatcher("/sucessoCadastroCliente.jsp");
 //		request.setAttribute("cadastroCliente", cliente);

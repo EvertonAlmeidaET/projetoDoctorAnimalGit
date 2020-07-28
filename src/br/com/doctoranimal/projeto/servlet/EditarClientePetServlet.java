@@ -15,11 +15,13 @@ import br.com.doctoranimal.projeto.concretas.DadosCliente;
 /**
  * Servlet implementation class EditarClientePetServlet
  */
+//http:/localhost:8080/doctoranimal/editarClientePet
 @WebServlet("/editarClientePet")
 public class EditarClientePetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Editando Cliente Pet....");
 		
 		String paramId = request.getParameter("id");
 		Integer idCliente =  Integer.valueOf(paramId);

@@ -21,7 +21,7 @@ h1{
 }
 
 hr.linhaDivisoria{
-	border-top: 20px solid;
+	border-top: 1px solid;
 }
 
 /* DESABILITAR A ALTERAÇÃO DO TAMANHO DO TEXTAREA DO FORMPET */
@@ -30,6 +30,6 @@ textarea#cDescricao{
 }
 
 /* POSICIONAR O BOTÃO ENVIAR DO FORMULARIO */
-input#enviarformuladoCliente{
+input#enviarformuladoCliente, #editarformuladoClientePet{
 	margin-left: 200px;
 }

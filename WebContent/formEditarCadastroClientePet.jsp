@@ -1,84 +1,79 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ page import="br.com.doctoranimal.projeto.servlet.CadastroClientePetServlet" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+ 
+ <c:url value="/alteraClientePet" var="linkServletAlteraClientePet"/>
  
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Cadastro Cliente</title>
+		<title>Editar Cadastro Cliente Pet</title>
 		<link rel="stylesheet" type="text/css" href="_style/form.css">
 		<script language="javascript" src="_javascript/scriptform.js"></script>
 	</head>
 	<body>
 		<h1>Cadastro</h1>
-		<form action="/doctoranimal/cadastroCliente" method="post" id="cadastroCliente">
+		<form action="${linkServletAlteraClientePet}" method="post" id="cadastroCliente">
+			<input type="hidden" id="cIdCliente" name="idCliente" value="${editaClintePet.idCliente}">
 			<fieldset id="cliete">
 				<legend>Cadastro do cliente</legend>
 					<!-- NOME CLIENTE -->
 					<p>
 						<label for="cNomeCliete">Nome Cliente:</label>
-						<input type="text" name="nomeCliente" id="cNomeCliente" size="20" maxlength="30" placeholder="Nome Completo" onkeypress="return formatarApenasLetras()"/>
+						<input type="text" name="nomeCliente" id="cNomeCliente" size="20" maxlength="30" placeholder="Nome Completo" onkeypress="return formatarApenasLetras()"
+						value="${editaClintePet.nomeCliente}"/>
 					</p>
 					
 					<!-- IDADE CLIENTE --> 
 					<p>
 						<label for="cIdadeCliente">Idade:</label>
-						<input type="text" name="idadeCliente" id="cIdadeCliente" size="2" maxlength="2" placeholder="Idade" onkeypress="return formatarApenasNumero()"/>
+						<input type="text" name="idadeCliente" id="cIdadeCliente" size="2" maxlength="2" placeholder="Idade" onkeypress="return formatarApenasNumero()"
+						value="${editaClintePet.idade}"/>
 					</p> 
-					
-					<!-- SEXO CLIENTE --> 
-				 	<fieldset id="cSexoCliente">
-                         <legend>Sexo</legend>
-                         <input type="radio" name="sexoCliente" id="cMasc" checked="true" value="M"> <label for="cMasc">Masculino</label>
-                         <br/>
-                         <input type="radio" name="sexoCliente" id="cFem" value="F"> <label for="cFem">Feminino</label>
-                    </fieldset>
                     
 					<!-- CPF CLIENTE --> 
 					<p>
 						<label for="cCpfCliente">CPF Cliente:</label>
-						<input type="text" name="cpfCliente" id="cCpfCliente" size="11" maxlength="12" placeholder="CPF" onkeypress="return formatarApenasNumero()"/>
+						<input type="text" name="cpfCliente" id="cCpfCliente" size="11" maxlength="12" placeholder="CPF" onkeypress="return formatarApenasNumero()"
+						value="${editaClintePet.cpf}"/>
 					</p>
 					
 					<!-- EMAIL CLIENTE --> 
 					<p>
 						<label for="cEmail">E-mail:</label>
-						<input type="email" name="emailCliente" id="cEmail" size="20" maxlength="40" placeholder="Digite seu E-mail"/>
+						<input type="email" name="emailCliente" id="cEmail" size="20" maxlength="40" placeholder="Digite seu E-mail"
+						value="${editaClintePet.email}"/>
 					</p>
 			</fieldset>
 	
 			<hr class="linhaDivisoria"/>
 			
 			<h1>CadastroPET</h1>
-	
+			<input type="hidden" id="cIdPet" name="idPet" value="${editaClintePet.animal.idPet}">
 			<fieldset id="pet">
 				<legend>Cadastro do Animal</legend>
 					<!-- NOME ANIMAL -->
 					<p>
 						<label for="cNomeAnimal">Nome Animal:</label>
-						<input type="text" name="nomeAnimal" id="cNomeAnimal" size="20" maxlength="30" placeholder="Nome do Animal" onkeypress="return formatarApenasLetras()"/>
+						<input type="text" name="nomeAnimal" id="cNomeAnimal" size="20" maxlength="30" placeholder="Nome do Animal" onkeypress="return formatarApenasLetras()"
+						value="${editaClintePet.animal.nomeAnimal}"/>
 					</p>
 					
 					<!-- IDADE ANIMAL -->
 					<p>
 						<label for="cIdadeAnimal">Idade do Animal:</label>
-						<input type="text" name="idadeAnimal" id="cIdadeAnimal" size="2" maxlength="2" placeholder="Idade" onkeypress="return formatarApenasNumero()"/>
+						<input type="text" name="idadeAnimal" id="cIdadeAnimal" size="2" maxlength="2" placeholder="Idade" onkeypress="return formatarApenasNumero()"
+						value="${editaClintePet.animal.idadeAnimal}"/>
 					</p>
-					
-					<!-- SEXO CLIENTE --> 
-				 	<fieldset id="cSexoAnimal">
-                         <legend>Sexo do Animal</legend>
-                         <input type="radio" name="sexoAnimal" id="cMasc" checked="true" value="M"> <label for="cMasc">Masculino</label>
-                         <br/>
-                         <input type="radio" name="sexoAnimal" id="cFem" value="F"> <label for="cFem">Feminino</label>
-                    </fieldset>
                     
                     <!-- ESPECIE/RAÇA ANIMAL -->
 					<p>
 						<label for="cRaca">Raça:</label>
 						<select name="racaAnimal" id="cRaca">
-							<option value="null">Selecione...</option>
+							<option value="${editaClintePet.animal.raca}" >Selecione...</option>
 							<optgroup label="Cachorro">
 								<option value="Poodle">Poodle</option>
 								<option value="Shih-tzu">Shih tzu</option>
@@ -105,11 +100,12 @@
 				  	<!-- DESCRIÇÃO -->
                     <p><label for="cDescricao">Descricao:</label>
                     	<br/>
-                    	<textarea name="descricao" id="cDescricao" cols="35" rows="5" placeholder="Comente sobre o Animal"></textarea>
+                    	<textarea name="descricao" id="cDescricao" cols="35" rows="5" placeholder="Comente sobre o Animal"
+                    	>${editaClintePet.animal.descricao}</textarea>
                     </p>
                     
 					<!-- BOTÃO ENVIAR FORMULADO --> 
-					<input id="enviarformuladoClientePet" type="submit">
+					<input id="editarformuladoClientePet" type="submit">
 			</fieldset>
 		</form>
 			

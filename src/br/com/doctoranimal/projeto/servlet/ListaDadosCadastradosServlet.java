@@ -21,9 +21,18 @@ public class ListaDadosCadastradosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Listando Cliente e Pet......");
 		
 		BancoDeDados banco = new BancoDeDados();
 		List<DadosCliente> cadastro = banco.getClienteCadastrado();
+		
+		
+		for (DadosCliente clienteLista : cadastro) {
+			System.out.printf("[ID: %d - Cliente Nome: %s - CPF: %s] [IDPet: %d - NomePet: %s - Raça: %s - Descrição: %s] \n\r"
+					,clienteLista.getIdCliente(), clienteLista.getNomeCliente(), clienteLista.getCpf(), 
+					clienteLista.getAnimal().getIdPet(), clienteLista.getAnimal().getNomeAnimal(), 
+					clienteLista.getAnimal().getRaca(), clienteLista.getAnimal().getDescricao());
+		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/listarCadastrosSalvos.jsp");
 		request.setAttribute("dadosCadastrados", cadastro);

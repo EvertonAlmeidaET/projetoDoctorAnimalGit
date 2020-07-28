@@ -12,11 +12,13 @@ import br.com.doctoranimal.projeto.concretas.BancoDeDados;
 /**
  * Servlet implementation class RemoveClientePetServlet
  */
+//http:/localhost:8080/doctoranimal/removeClientePet
 @WebServlet("/removeClientePet")
 public class RemoveClientePetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Excluindo Cliente e Pet......");
 		
 		String paramId = request.getParameter("id");
 		Integer idCliente =  Integer.valueOf(paramId);
